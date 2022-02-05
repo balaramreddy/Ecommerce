@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row w100">
+    <div class="col-md-4">
+      <h4 class="bold p-4">Edit Product</h4>
+      <form [formGroup]="productForm" (ngSubmit)="postdata()">
+        <div class="form-group mb-2">
+          <label for="name">ProductName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="productName"
+            placeholder="productName"
+            required
+            #name
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="Img">ProductImg</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Img"
+            formControlName="productImg"
+            placeholder="Take image url form google"
+            required
+            #Img
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="description">Product Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            formControlName="description"
+            placeholder="Enter description"
+            required
+            #description
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="price">Product price</label>
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            formControlName="price"
+            placeholder="$ Price"
+            required
+            #price
+          />
+        </div>
+        <div class="form-group mb-2">
+          <label for="rating">Product rating</label>
+          <input
+            type="text"
+            class="form-control"
+            id="rating"
+            formControlName="rating"
+            placeholder="rating b/w 1-5"
+            required
+            #rating
+          />
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit" [disabled]="!productForm.valid">
+          Save
+        </button>
+            
+       
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h4 class="bold p-4">Preview Product</h4>
+      <div class="col mb-5">
+        <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" [src]="Img.value" width="50" height="250px" alt="productImg" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder">{{name.value}}</h5>
+                    <!-- Product price-->
+                   {{price.value}}
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">{{description.value}}</div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+  </div>
+</div>

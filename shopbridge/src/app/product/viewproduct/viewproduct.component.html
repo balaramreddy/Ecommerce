@@ -1,0 +1,29 @@
+<table class="table border">
+    <thead class="light black-text">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">rating</th>
+        <th scope="col">Price</th>
+        <th scope="col">Last Updated</th>
+        <th scope="col">Modify</th>
+  
+      </tr>
+    </thead>
+    <tbody *ngFor="let list of lists">
+      <tr>
+        <td>{{list._id}}</td>
+        <td><img class="table-image" src="{{list.productImg}}" alt="{{list.productName}}"> </td>
+        <td>{{list.productName}}</td>
+        <td>{{list.description}} </td>                  
+        <td>{{list.rating}} </td>
+        <td>{{list.price}} </td>
+        <td>{{list.updatedAt | date:'dd-MMM-yyyy h:mm:ss a'}} </td>
+        <td><a routerLink="/products/edit/{{list._id}}"><i class="fas fa-edit" ></i> </a>
+          <i class="fas fa-trash" (click)="delete(list._id)"  ></i>  
+        </td>
+      </tr>
+    </tbody>
+  </table>

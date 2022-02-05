@@ -1,0 +1,19 @@
+tr td{
+    text-align:justify;
+    font-family: 'Abel', sans-serif;
+    font-weight: 550;
+    border:1px solid black;
+}
+.fas{
+   margin-left: 5px;
+}
+.fa-edit{
+    color: orange;
+}
+.fa-trash{
+    color: red;
+}
+.table-image{
+    width: 100px;
+    height: 100px;
+}
